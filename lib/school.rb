@@ -1,3 +1,4 @@
+require "pry"
 class School
  
   attr_reader :roster
@@ -8,9 +9,12 @@ class School
   end 
   
   def add_student(name,grade)
-    @name[grade] = name 
-    @grade = grade 
+    @name[grade] ||=[]
+
+#     binding.pry
+
+    @roster[grade] << name
   
-    @roaster[grade] << name/
+
   end
 end 
